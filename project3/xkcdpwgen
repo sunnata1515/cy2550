@@ -23,8 +23,7 @@ def generate_password(wordlist, num_words, num_caps, num_numbers, num_symbols):
 	     
 	     return password
 
-     parser = argparse.ArgumentParser(
-	     description="generate a secure, memorable password using the XKCD method")
+     parser = argparse.ArgumentParser()
      parser.add_argument('-w', '--words', type = int, default=4)
      parser.add_argument('c', '--caps', type=int, default=0)
      parser.add_argument('n', '--numbers', type=int, default=0)
@@ -33,8 +32,10 @@ def generate_password(wordlist, num_words, num_caps, num_numbers, num_symbols):
      args = parser.parse_args()
      wordlist = load_wordlist(words.txt)
      password = generate_password(wordlist, args.words, args.caps, args.numbers, args.symbols)
-	
-print(generate_password(load_wordlist('words.txt'), args.words, args.caps, args.numbers,args.symbol))
+     print(password)
+     
+     if __name__ == " main ":
+          main()
 
 
 
