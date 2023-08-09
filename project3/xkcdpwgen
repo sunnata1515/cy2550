@@ -15,6 +15,7 @@ def generate_password(wordlist, num_words, num_caps, num_numbers, num_symbols):
       password = ''.join(words)
       
       if num_caps > 0:
+        for i in range(num_caps):
                 random_word = random.choice(words)
                 words[words.index(random_word)] = random_word.capitalize()
                 password = ''.join(words) 
