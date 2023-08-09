@@ -13,24 +13,18 @@ def generate_password(wordlist, num_words, num_caps, num_numbers, num_symbols):
       words = random.sample(wordlist, num_words)
       password = ""
       password = ''.join(words)
-      print(password)
       
       if num_caps > 0:
                 random_word = random.choice(words)
                 words[words.index(random_word)] = random_word.capitalize()
                 password = ''.join(words) 
-                
-                
       if num_numbers > 0: 
 	        password += ''.join(random.choice('0123456789') for _ in range(num_numbers))
-	        
-	        print(password)        
-	        
       if num_symbols > 0:
 	        password += ''.join(random.choice('~!@#$%^&*.:;') for _ in range(num_symbols))
 	        
-	        print(password)
-	        return password
+	        
+      print(password)
 
 def main():
      parser = argparse.ArgumentParser()
